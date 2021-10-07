@@ -37,6 +37,7 @@ html
               li.nav__item: a.nav__link(href="/login", class=(currentPath.startsWith('/login') ? 'nav__link--active' : '')) Log In
 
     block messages
+      //- pre= h.dump(locals.flashes)
       if locals.flashes
         .inner
           .flash-messages
@@ -50,5 +51,5 @@ html
       block content
 
     block scripts
-      script(src=`https://maps.googleapis.com/maps/api/js?key=${process.env.MAP_KEY}&libraries=places`)
+      //- script(src=`https://maps.googleapis.com/maps/api/js?key=${process.env.MAP_KEY}&libraries=places`)
       script(src="/dist/App.bundle.js")
